@@ -1,0 +1,16 @@
+#include "com_sample_fibb_fibbLib.h"
+long fibbN(int n)
+{
+	if(n==0||n==1)
+	{
+		return 1;
+	}
+	else 
+		return fibbN(n-1)+fibbN(n-2);
+}
+JNIEXPORT jlong JNICALL Java_com_sample_fibb_fibbLib_fibbN
+  (JNIEnv *env, jclass obj, jint n)
+{
+	return fibbN(n);
+}
+
